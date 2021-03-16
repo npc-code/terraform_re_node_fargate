@@ -38,10 +38,9 @@ module "ecs" {
   ecr_repo_name         = "${var.prefix}-ecr-repo"
   subnets               = module.network.public_subnets
   container_subnets     = module.network.private_subnets
-  #zone_id               = data.aws_route53_zone.main_zone.zone_id
   domain_name           = var.domain_name
   url                   = var.url
-  #use_cert              = var.use_tls
+
   providers = {
     aws = aws.main-account
   }

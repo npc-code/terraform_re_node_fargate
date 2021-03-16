@@ -68,11 +68,6 @@ variable "oauth_token" {
   description = "This is the oauth token used by AWS CodePipeline to access the repo"
 }
 
-#variable "use_tls" {
-#  type        = bool
-#  description = "whether we would like to use a cert or not"
-#}
-
 variable "url" {
   type        = string
   description = "base url to use for the app"

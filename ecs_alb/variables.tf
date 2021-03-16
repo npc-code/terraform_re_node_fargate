@@ -69,11 +69,6 @@ variable "domain_name" {
     default = ""
 }
 
-#variable "use_domain" {
-##    type = bool
-#    description = "true/false as to our use of a route53 domain. requires domain name.  if set to false, will use the dns of the alb"
-#}
-
 variable "url" {
     type = string
     description = "domain name to be used for the alb"

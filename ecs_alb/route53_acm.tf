@@ -4,7 +4,7 @@ data "aws_route53_zone" "main_zone" {
 }
 
 resource "aws_route53_record" "alb_endpoint" {
-  zone_id = data.aws_route53_zone.main_zone.id
+  zone_id = data.aws_route53_zone.main_zone.id  
   name    = var.url
   type    = "A"
 
@@ -21,15 +21,17 @@ resource "aws_acm_certificate" "cert_request" {
   validation_method         = "DNS"
 
   tags = {
-    Name : var.url
+    Name : "alb endpoint"
   }
 
   lifecycle {
     create_before_destroy = true
   }
+  depends_on = [aws_alb.app_alb]
 }
 
 resource "aws_route53_record" "validation_record" {
+  #depends_on = [aws_alb.app_alb, aws_acm_certificate.cert_request]
   for_each = {
     for dvo in aws_acm_certificate.cert_request.domain_validation_options : dvo.domain_name => {
       name   = dvo.resource_record_name
@@ -44,4 +46,5 @@ resource "aws_route53_record" "validation_record" {
   ttl             = 60
   type            = each.value.type
   zone_id         = data.aws_route53_zone.main_zone.id
+#  zone_id = aws_alb.app_alb.zone_id
 }
