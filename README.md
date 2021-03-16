@@ -1,6 +1,6 @@
-# toy_terraform_flask_deployment
+# terraform_re_node_fargate
 
-A simple POC for working with AWS via Terraform.  Currently this will only work with a flask application running within docker, but further changes will make this more modular. This project will create:
+A simple POC for working with AWS via Terraform. This project will create:
 - a vpc with 2 public and 2 private subnets across 2 azs
 - an internet gateway and nat gateway for public and private subnet routes
 - security groups for the alb and the fargate cluster
@@ -20,9 +20,7 @@ After the project is launched, going forward, commits made to the targeted repo 
 - route53 public domain (further work will make this optional in child modules, but given the ease of use/cost, I would encourage having one)
 
 ## Dependencies
-- https://github.com/npc-code/toy_ecs_code_pipeline
-- https://github.com/npc-code/toy_terraform_code_pipeline
-- https://github.com/npc-code/toy_terraform_network
+
 
 ## Installation
 - Pull down the project, change into project directory, and execute: terraform init
