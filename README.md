@@ -15,7 +15,7 @@ After the project is launched, going forward, commits made to the targeted repo 
 - AWS account 
 - An IAM profile in the account with the necessary permissions
 - Terraform
-- A github repo to use as your target repository (you can fork to use as an example)
+- A github repo to use as your target repository (you can fork https://github.com/npc-code/npc_quest.git to use as an example)
 - oauth token created on github with access to your target repository (see: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token )
 - route53 public domain (see: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html)
 
