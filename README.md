@@ -13,7 +13,7 @@ After the project is launched, going forward, commits made to the targeted repo 
 
 ## Requirements
 - AWS account 
-- An IAM profile in the account with the necessary permissions
+- An IAM profile in the account with the necessary permissions, and access keys (see: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 - Terraform
 - A github repo to use as your target repository (you can fork https://github.com/npc-code/npc_quest.git to use as an example)
 - oauth token created on github with access to your target repository (see: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token )
