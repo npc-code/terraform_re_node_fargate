@@ -49,7 +49,7 @@ resource "aws_security_group" "alb_sg" {
 }
 
 resource "aws_security_group_rule" "https" {
-  count = var.use_cert ? 1 : 0
+  #count = var.use_cert ? 1 : 0
   type              = "ingress"
   from_port         = "443"
   to_port           = "443"

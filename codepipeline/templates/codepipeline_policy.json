@@ -67,8 +67,7 @@
       "Condition": {
         "StringLike": {
           "iam:PassedToService": [
-            "ec2.amazonaws.com",
-            "ec2.amazonaws.com.cn"
+            "ec2.amazonaws.com"
           ]
         }
       }
@@ -82,8 +81,7 @@
       "Condition": {
         "StringLike": {
           "iam:PassedToService": [
-            "application-autoscaling.amazonaws.com",
-            "application-autoscaling.amazonaws.com.cn"
+            "application-autoscaling.amazonaws.com"
           ]
         }
       }

@@ -64,18 +64,15 @@ variable "ecr_repo_name" {
     description = "Name of the ecr repo to use"
 }
 
-variable "zone_id" {
-    description = "zone id for the route53 hosted zone we will use for our DNS"
-}
-
 variable "domain_name" {
-    description = "domain name to be used for the alb"
+    description = "root domain for route53 hosted zone"
     default = ""
 }
 
-variable "use_cert" {
-    type = bool
-    description = "true/false as to our use of a certificate. requires domain name"
+variable "url" {
+    type = string
+    description = "domain name to be used for the alb"
+    default = ""
 }
 
 

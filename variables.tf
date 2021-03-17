@@ -14,7 +14,7 @@ variable "container_port" {
 
 variable "external_ip" {
   type    = string
-  default = "74.69.167.125/32"
+  default = "0.0.0.0/0"
 }
 
 variable "desired_task_cpu" {
@@ -53,6 +53,7 @@ variable "git_repository" {
 variable "domain_name" {
   type        = string
   description = "Domain name for AWS Route53 hosted zone"
+  default = ""
 }
 
 variable "prefix" {
@@ -67,14 +68,10 @@ variable "oauth_token" {
   description = "This is the oauth token used by AWS CodePipeline to access the repo"
 }
 
-variable "use_tls" {
-  type        = bool
-  description = "whether we would like to use a cert or not"
-}
-
 variable "url" {
   type        = string
   description = "base url to use for the app"
+  default = ""
 }
 
 
