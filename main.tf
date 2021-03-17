@@ -33,7 +33,6 @@ module "ecs" {
   desired_tasks         = 2
   external_ip           = var.external_ip
   vpc_id                = module.network.vpc_id
-  alb_port              = 80
   region                = var.region
   ecr_repo_name         = "${var.prefix}-ecr-repo"
   subnets               = module.network.public_subnets

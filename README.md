@@ -15,11 +15,10 @@ After the project is launched, going forward, commits made to the targeted repo 
 - AWS account 
 - An IAM profile in the account with the necessary permissions
 - Terraform
-- A github repo to use as your target repository
-- oauth token created on github with access to your target repository
-- route53 public domain (further work will make this optional in child modules, but given the ease of use/cost, I would encourage having one)
+- A github repo to use as your target repository (you can fork to use as an example)
+- oauth token created on github with access to your target repository (see: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token )
+- route53 public domain (see: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html)
 
-## Dependencies
 
 
 ## Installation
@@ -30,12 +29,17 @@ After the project is launched, going forward, commits made to the targeted repo 
 
 ## Example .tfvar file
 ```hcl
-region         = "us-east-2"
+region         = "us-east-1"
 prefix         = "dev"
 vpc_cidr       = "10.1.0.0/16"
 oauth_token    = "your_token_here"
 profile        = "your_iam_profile_name"
 git_repository = { owner = "your_github_handle", name = "your_repo_name", branch = "main" }
+domain_name    = "example.com"
+url            = "quest.example.com"
+container_port = 3000
+environment_variables = { YOUR_ENV_VARIABLE_NAME = "variable_value"}
+external_ip    = "0.0.0.0/0"
 ```
 
 
