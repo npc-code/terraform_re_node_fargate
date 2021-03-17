@@ -5,7 +5,7 @@ A simple POC for working with AWS via Terraform. This project will create:
 - an internet gateway and nat gateway for public and private subnet routes
 - security groups for the alb and the fargate cluster
 - appropriate IAM roles
-- an alb, currently serving only http traffic
+- an alb with an attached ACM cert, redirects http to https
 - a fargate cluster
 - a codepipeline that uses codebuild to build the container and push to the created ecr, and then deploy the latest build to the fargate cluster
 
@@ -18,8 +18,6 @@ After the project is launched, going forward, commits made to the targeted repo 
 - A github repo to use as your target repository (you can fork to use as an example)
 - oauth token created on github with access to your target repository (see: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token )
 - route53 public domain (see: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html)
-
-
 
 ## Installation
 - Pull down the project, change into project directory, and execute: terraform init
@@ -47,7 +45,7 @@ external_ip    = "0.0.0.0/0"
 - Execute: terraform plan -var-file=dev.tfvars
 - Assuming no errors, execute: terraform apply -var-file=dev.tfvars
 - drink coffee
-- at end of execution, the DNS for the alb is displayed, navigate to this endpoint to access your app running in Fargate behind an alb.
+- at end of execution, url you passed will be output.  navigate to this endpoint to access your app running in Fargate behind an alb.
 - when finished, execute: terraform destroy -var-file=dev.tfvars.  THIS WILL DESTROY ALL RESOURCES CREATED BY THIS PROJECT.  
 
 ## DISCLAIMER
